@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+
+<!-- HUD test panel-->
+
+<PropertyList>
+
+ <path>HUD_test_panel.ac</path>
+
+ <animation>
+  <type>rotate</type>
+  <object-name>Switch</object-name>
+  <center>
+   <x-m>0</x-m>
+   <y-m>0</y-m>
+   <z-m>0</z-m>
+  </center>
+  <axis>
+   <x>0.025</x>
+   <y>0.02278</y>
+   <z>0.03252</z>
+  </axis>
+ </animation>
+
+ <animation>
+  <type>rotate</type>
+  <object-name>Knob</object-name>
+  <factor>36</factor>
+  <center>
+   <x-m>0</x-m>
+   <y-m>0</y-m>
+   <z-m>0</z-m>
+  </center>
+  <axis>
+   <x>0.031</x>
+   <y>0.07102</y>
+   <z>0.0394</z>
+  </axis>
+ </animation>
+
+<animation n="100">
+ <type>scale</type>
+ <property>constants/zero</property>
+ <x-offset>0.40</x-offset>
+ <y-offset>0.40</y-offset>
+ <z-offset>0.40</z-offset>
+</animation>
+
+</PropertyList>
