@@ -610,7 +610,7 @@ the flight data model, instrument panel, and external 3D model.
 	</controls>
 
 	<input>
-		<keyboard include="../../Input/Keyboard/carrier-bindings.xml">
+		<keyboard include="Input/Keyboard/carrier-bindings.xml">
 			<!--<keyboard>-->
 		<key n="100">	<name>d</name>	     <desc>Crew door</desc>	<binding> 	   <command>nasal</command>	<script>doors.doorsystem.crewexport();</script>    </binding>	</key>  	<key n="2">
 				<name>Ctrl-B</name>
