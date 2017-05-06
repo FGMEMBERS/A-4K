@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+
+
+<PropertyList>
+
+ <path>HUD.ac</path>
+ 
+ <animation>
+ <type>pick</type>
+ <object-name>Cylinder</object-name>
+ <action>
+  <button>0</button>
+  <repeatable>false</repeatable>
+  <binding>
+   <command>property-toggle</command>
+   <property>controls/lighting/probe</property>
+  </binding>
+ </action>
+</animation>
+
+<animation>
+ <type>select</type>
+ <object-name>hideable</object-name>
+ <condition>
+  <property>/controls/lighting/probe</property>
+ </condition>
+</animation>
+
+</PropertyList>
