@@ -1,0 +1,179 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+	<path>aoa-indexer.ac</path>
+
+	<animation>
+		<type>select</type>
+		<object-name>aoa-too-slow</object-name>
+		<condition>
+			<!--<greater-than>
+				<property>systems/electrical/outputs/aoa-indexer</property>
+				<value>23</value>
+			</greater-than>-->
+			<greater-than>
+				<property>orientation/alpha-deg</property>
+				<property>sim/aoa-indexer/too-slow-deg</property>
+			</greater-than>
+			<equals>
+				<property>gear/gear[0]/position-norm</property>
+				<value>1</value>
+			</equals>
+		</condition>
+	</animation>
+
+	<animation>
+		<type>select</type>
+		<object-name>aoa-slow</object-name>
+		<condition>
+			<!--<greater-than>
+				<property>systems/electrical/outputs/aoa-indexer</property>
+				<value>23</value>
+			</greater-than>-->
+			<less-than>
+				<property>orientation/alpha-deg</property>
+				<property>sim/aoa-indexer/too-slow-deg</property>
+			</less-than>
+			<greater-than>
+				<property>orientation/alpha-deg</property>
+				<property>sim/aoa-indexer/slow-deg</property>
+			</greater-than>
+			<equals>
+				<property>gear/gear[0]/position-norm</property>
+				<value>1</value>
+			</equals>
+		</condition>
+	</animation>
+
+	<animation>
+		<type>select</type>
+		<object-name>aoa-on-speed</object-name>
+		<condition>
+			<!--<greater-than>
+				<property>systems/electrical/outputs/aoa-indexer</property>
+				<value>23</value>
+			</greater-than>-->
+			<less-than>
+				<property>orientation/alpha-deg</property>
+				<property>sim/aoa-indexer/slow-deg</property>
+			</less-than>
+			<greater-than>
+				<property>orientation/alpha-deg</property>
+				<property>sim/aoa-indexer/fast-deg</property>
+			</greater-than>
+			<equals>
+				<property>gear/gear[0]/position-norm</property>
+				<value>1</value>
+			</equals>
+		</condition>
+	</animation>
+
+	<animation>
+		<type>select</type>
+		<object-name>aoa-fast</object-name>
+		<condition>
+			<!--<greater-than>
+				<property>systems/electrical/outputs/aoa-indexer</property>
+				<value>23</value>
+			</greater-than>-->
+			<less-than>
+				<property>orientation/alpha-deg</property>
+				<property>sim/aoa-indexer/fast-deg</property>
+			</less-than>
+			<greater-than>
+				<property>orientation/alpha-deg</property>
+				<property>sim/aoa-indexer/too-fast-deg</property>
+			</greater-than>
+			<equals>
+				<property>gear/gear[0]/position-norm</property>
+				<value>1</value>
+			</equals>
+		</condition>
+	</animation>
+
+	<animation>
+		<type>select</type>
+		<object-name>aoa-too-fast</object-name>
+		<condition>
+			<!--<greater-than>
+				<property>systems/electrical/outputs/aoa-indexer</property>
+				<value>23</value>
+			</greater-than>-->
+			<less-than>
+				<property>orientation/alpha-deg</property>
+				<property>sim/aoa-indexer/too-fast-deg</property>
+			</less-than>
+			<equals>
+				<property>gear/gear[0]/position-norm</property>
+				<value>1</value>
+			</equals>
+		</condition>
+	</animation>
+
+
+	<animation>
+		<type>select</type>
+		<!-- Note that as per the NATOPS manual, the APC is LIT when the APC is OFF! -->
+		<object-name>apc-off</object-name>
+		<condition>
+			<equals>
+				<property>controls/engines/engine/apc</property>
+				<value>false</value>
+			</equals>
+			<equals>
+				<property>gear/gear[0]/position-norm</property>
+				<value>1</value>
+			</equals>
+		</condition>
+	</animation>
+
+	<!-- APC is not lit when, a) APC is on, b) gear is not down -->
+	<animation>
+		<type>select</type>
+		<object-name>apc-on</object-name>
+		<condition>
+			<or>	
+				<and>
+					<equals>
+						<property>controls/engines/engine/apc</property>
+						<value>true</value>
+					</equals>
+					<equals>
+						<property>gear/gear[0]/position-norm</property>
+						<value>1</value>
+					</equals>
+				</and>
+				<less-than>
+					<property>gear/gear[0]/position-norm</property>
+					<value>1</value>
+				</less-than>	
+			</or>
+		</condition>
+	</animation>
+
+<!-- lighting -->
+	<animation>
+		<object-name>aoa-too-slow</object-name>
+		<object-name>aoa-slow</object-name>
+		<object-name>aoa-on-speed</object-name>
+		<object-name>aoa-fast</object-name>
+		<object-name>aoa-too-fast</object-name>
+		<object-name>apc-off</object-name>
+		<object-name>apc-on</object-name>
+		<type>material</type>
+		<emission>
+			<factor-prop>sim/model/a4/controls/lighting/index-norm</factor-prop>
+			<red>0.8</red>
+			<green>0.8</green>
+			<blue>0.8</blue>
+		</emission>
+	</animation>
+
+	<animation>
+		<type>range</type>
+		<min-m>0</min-m>
+		<max-m>35</max-m>
+	</animation>
+
+</PropertyList>
