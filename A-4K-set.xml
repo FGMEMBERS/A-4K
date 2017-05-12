@@ -544,10 +544,10 @@ the flight data model, instrument panel, and external 3D model.
 				<name>(Click Refueling Pod)</name>
 				<desc>toggle refueling drouge</desc>
 			</key>
-					<key>
+		        <key>
 				<name>d</name>
 				<desc>Open canopy (or click on it)</desc>
-		
+			</key>
 <line>approach speed (full flaps): 180-190 kts IAS</line>
       <line>touchdown speed: 165 kts IAS</line>
        </help>
