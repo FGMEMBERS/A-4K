@@ -120,19 +120,6 @@
    <z-m>0.91400</z-m>
   </offsets>
  </model>
-
-<model>
-    <path>Aircraft/A-4K/Models/Cockpit/Instruments/gear-indicator.xml</path>
-    <name>Gear Indicator</name>
-    <offsets>
-   <x-m>2.6217</x-m>
-   <y-m>-0.265</y-m>
-   <z-m>0.6437</z-m>
-      <pitch-deg>6.3</pitch-deg>
-      <roll-deg>-1.6</roll-deg>
-    </offsets>
-  </model>
-
  <model>
   <name>Airspeed Indicator</name>
   <path>Aircraft/A-4K/Models/Cockpit/Instruments/ASI/asi.xml</path>
@@ -618,6 +605,54 @@
   </or>
  </condition>
 </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>blah.022</object-name>
+    <object-name>blah.025</object-name>
+    <property>/controls/gear/gear-down</property>
+	<value>false</value>
+	<factor>-90</factor>
+    <center>
+      <x-m>2.6613</x-m>
+      <y-m>-0.30914</y-m>
+      <z-m>0.76853</z-m>
+    </center>
+    <axis>
+      <x>0</x>
+      <y>1</y>
+      <z>0</z>
+    </axis>
+  </animation>
+  
+    <animation>
+    <type>rotate</type>
+    <object-name>blah.013</object-name>
+	<object-name>blah.016</object-name>
+	<object-name>blah.014</object-name>
+	<object-name>blah.015</object-name>
+    <property>/controls/engines/engine[0]/throttle</property>
+    <interpolation>
+      <entry>
+        <ind>0</ind>
+        <dep>45</dep>
+      </entry>
+      <entry>
+        <ind>1</ind>
+        <dep>-30</dep>
+      </entry>
+    </interpolation>
+    <center>
+      <x-m>2.79124</x-m>
+      <y-m>-0.24481</y-m>
+      <z-m>0.61116</z-m>
+    </center>
+    <axis>
+      <x>0</x>
+      <y>1</y>
+      <z>0</z>
+    </axis>
+  </animation>
 
 </PropertyList>
 
