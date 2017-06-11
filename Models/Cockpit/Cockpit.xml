@@ -32,7 +32,18 @@
    <z-m>0.933</z-m>
   </offsets>
  </model>
-
+	
+<model>
+    <path>Aircraft/A-4K/Models/Cockpit/Instruments/gear-indicator.xml</path>
+    <name>Gear Indicator</name>
+    <offsets>
+   <x-m>2.6217</x-m>
+   <y-m>-0.265</y-m>
+   <z-m>0.6437</z-m>
+      <pitch-deg>6.3</pitch-deg>
+      <roll-deg>-1.6</roll-deg>
+    </offsets>
+ </model>
 
 <model>
   <name>RWR</name>
