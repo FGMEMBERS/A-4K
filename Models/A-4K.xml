@@ -938,7 +938,7 @@
 
     <property>surface-positions/left-aileron-pos-norm</property>
 
-    <factor>-30</factor>
+    <factor>30</factor>
 
     <offset-deg>0</offset-deg>
 
@@ -969,7 +969,7 @@
 
     <property>surface-positions/right-aileron-pos-norm</property>
 
-    <factor>30</factor>
+    <factor>-30</factor>
 
     <offset-deg>0</offset-deg>
 
