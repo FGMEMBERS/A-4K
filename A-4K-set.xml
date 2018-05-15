@@ -48,6 +48,13 @@ the flight data model, instrument panel, and external 3D model.
 			<visibility>false</visibility>
 		</panel>
 
+           <multiplay>
+              <generic>
+               <string n="9" type="string"/>
+               <int n="10" alias="controls/armament/trigger-cannon" />
+              </generic>
+           </multiplay>
+
 		<instrumentation>
 			<path>Aircraft/A-4K/Systems/instrumentation.xml</path>
 		</instrumentation>
@@ -471,7 +478,7 @@ the flight data model, instrument panel, and external 3D model.
 		</aoa-indexer>
 
    <hud>
-      <path n="1">Aircraft/A-4K/Hud/Kahu hud.xml</path>
+      <path n="1">Aircraft/A-4K/Hud/KahuMain.xml</path>
 	  
       <visibility n="0" type="bool">false</visibility>
       <visibility n="1" type="bool">true</visibility>
@@ -491,10 +498,7 @@ the flight data model, instrument panel, and external 3D model.
 	  <bottom type="double">-90</bottom>
      </clipping>
 
-</hud>
-<hud>
-
-<path n="2">HUDS/default.xml</path>
+<path n="2">Aircraft/A-4K/Hud/a2g.xml</path>
 	  
       <visibility n="0" type="bool">false</visibility>
       <visibility n="1" type="bool">true</visibility>
