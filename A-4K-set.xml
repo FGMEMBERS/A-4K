@@ -591,6 +591,10 @@ the flight data model, instrument panel, and external 3D model.
                       <name>S</name>
                       <desc>Toggle Smoke</desc>
                 </key>	
+                 <key>
+                      <name>I</name>
+                      <desc>Change HUD mode</desc>
+                </key>
        </help>
 
 	<menubar>
