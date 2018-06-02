@@ -517,6 +517,26 @@ the flight data model, instrument panel, and external 3D model.
 	  <bottom type="double">0</bottom>
      </clipping>
 
+<path n="3">Aircraft/A-4K/Hud/a2a.xml</path>
+	  
+      <visibility n="0" type="bool">false</visibility>
+      <visibility n="1" type="bool">true</visibility>
+      <current-color>0</current-color>
+      <color>
+	<transparent type="bool">true</transparent>
+	<antialiased type="bool">false</antialiased>
+	<brightness type="float">1.0</brightness>
+	<alpha type="float">1.0</alpha>
+      </color>
+<clipping>
+    <left type="double">0</left>
+    <right type="double">0</right>
+    <top type="double">0</top>
+    
+	  <bottom type="double">0</bottom>
+     </clipping>
+
+
     </hud>
 
 		<!--<weight n="0">
