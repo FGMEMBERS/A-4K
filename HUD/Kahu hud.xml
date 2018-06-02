@@ -6,9 +6,9 @@
 	<ladder>
 		<name>Pitch Ladder</name>
 		<type>pitch</type>
-		<x>-20</x>
+		<x>-25</x>
 		<y>-45</y>
-		<width>50</width>
+		<width>62</width>
 		<height>90</height>
 		<roll-input>
 			<property>/orientation/roll-deg</property>
@@ -16,15 +16,15 @@
 		<pitch-input>
 			<property>/orientation/pitch-deg</property>
 		</pitch-input>
-		<compression-factor>7.5</compression-factor>
+		<compression-factor>11.63</compression-factor>
 		<display-span>6.0</display-span>
-		<divisions>5.0</divisions>
-		<screen-hole>32</screen-hole>
+		<divisions>4.0</divisions>
+		<screen-hole>6</screen-hole>
            <tick-length>5</tick-length>
-           <zero-bar-overlength>1.5</zero-bar-overlength>
-           <zero-bar-tick-length>0</zero-bar-tick-length>
-           <enable-zenith>true</enable-zenith>
-           <enable-nadir>true</enable-nadir>
+           <zero-bar-overlength>0</zero-bar-overlength>
+           <zero-bar-tick-length>5</zero-bar-tick-length>
+           <enable-zenith>false</enable-zenith>
+           <enable-nadir>false</enable-nadir>
            <enable_frl>false</enable_frl>
            <enable_target_spot>true</enable_target_spot>
            <enable-target-markers>true</enable-target-markers>
@@ -42,12 +42,12 @@
 		<enable-glide-slope-marker>true</enable-glide-slope-marker>
 		<glide-slope>0.0</glide-slope>
 		<enable-energy-worm>false</enable-energy-worm>
-		<enable-waypoint-marker>true</enable-waypoint-marker>
+		<enable-waypoint-marker>false</enable-waypoint-marker>
 	</ladder>
 
 	<label>
 		<name>KIAS</name>
-		<x>-56</x>
+		<x>-46</x>
 		<y>18</y>
 		<width>1</width>
 		<height>1</height>
@@ -116,7 +116,7 @@
 
 <tape>
 		<name>vertical speed</name>
-	      <x>-49</x>
+	      <x>-43</x>
 		<y>-55</y>
            <input>
 			<property>velocities/vertical-speed-fps</property>
@@ -204,7 +204,7 @@
 
 	<label>
 		<name>MACH Number</name>
-		<x>-58</x>
+		<x>-50</x>
 		<y>-3</y>
 		<width>1</width>
 		<height>1</height>
@@ -242,6 +242,23 @@
 		<halign>left</halign>
 	</label>
 
+ <turn-bank-indicator>
+  <name>Turn Bank Indicator</name>
+  <x>-91</x>
+  <y>-75</y>
+  <width>200</width>
+  <height>200</height>
+  <bank-input>
+   <property>/orientation/roll-deg</property>
+  </bank-input>
+  <sideslip-input>
+   <property>/orientation/side-slip-deg</property>
+  </sideslip-input>
+ <tick-type>bullet</tick-type>
+  <bank-scale>true</bank-scale>
+  <option>bottom</option>
+ </turn-bank-indicator>
+
 <label>
 <name>Ground Speed</name>
 		<width>2</width>
@@ -274,7 +291,7 @@
 
 <dial>
     <name>airspeed</name>
-    	<x>-40</x>
+    	<x>-35</x>
       <y>18</y>
     <width>3</width>
     <height>3</height>
@@ -350,102 +367,6 @@
 			<damp>1.3</damp>
 		</input>
 </label>
-
-<aiming-reticle>
-  <x>-5.4</x>
-  <y>2</y>
-  <width>10</width> <!-- defines the diameter of the constant/inner circle -->
-  <height>10</height>
-  <!-- <active-condition> -->
-   <!-- <property>/aim/active</property> -->
-  <!-- </active-condition> -->
-  <!-- <diameter-input> -->
-   <!-- defines the diameter of the adjustable/outer circle -->
-   <!-- <property>0</property> -->
-  <!-- </diameter-input> -->
- </aiming-reticle>
-
-      <label>
-		<name>l</name>
-		<x>-3.7</x>
-           <y>-1.7</y>
-		<width>1</width>
-		<height>1</height>
-		<format>l</format>
-            <diameter-input>5.0</diameter-input>
-		<halign>left</halign>
-	</label>
-
-<label>
-		<name>l</name>
-		<x>-3.7</x>
-           <y>-7</y>
-		<width>1</width>
-		<height>1</height>
-		<format>l</format>
-            <diameter-input>5.0</diameter-input>
-		<halign>left</halign>
-	</label>
-
-<label>
-		<name>l</name>
-		<x>-3.7</x>
-           <y>-12.5</y>
-		<width>1</width>
-		<height>1</height>
-		<format>l</format>
-            <diameter-input>5.0</diameter-input>
-		<halign>left</halign>
-	</label>
-
-<label>
-		<name>l</name>
-		<x>-3.7</x>
-           <y>-18</y>
-		<width>1</width>
-		<height>1</height>
-		<format>l</format>
-            <diameter-input>5.0</diameter-input>
-		<halign>left</halign>
-	</label>
-
-<label>
-		<name>l</name>
-		<x>-3.7</x>
-           <y>-23.5</y>
-		<width>1</width>
-		<height>1</height>
-		<format>l</format>
-            <diameter-input>5.0</diameter-input>
-		<halign>left</halign>
-	</label>
-
-<label>
-		<name>l</name>
-		<x>-3.7</x>
-           <y>-29</y>
-		<width>1</width>
-		<height>1</height>
-		<format>l</format>
-            <diameter-input>5.0</diameter-input>
-		<halign>left</halign>
-	</label>
-
-<label>
-		<name>l</name>
-		<x>-3.7</x>
-           <y>-34.5</y>
-		<width>1</width>
-		<height>1</height>
-		<format>l</format>
-            <diameter-input>5.0</diameter-input>
-		<halign>left</halign>
-	</label>
-
-
-
-
-
 
 </PropertyList>
 

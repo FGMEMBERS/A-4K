@@ -351,99 +351,24 @@
 		</input>
 </label>
 
+<label>
+		<name>+</name>
+		<x>-5.05</x>
+           <y>35</y>
+		<width>1</width>
+		<height>1</height>
+		<format>+</format>
+            <diameter-input>5.0</diameter-input>
+		<halign>left</halign>
+	</label>
+
 <aiming-reticle>
   <x>-5.4</x>
   <y>2</y>
-  <width>10</width> <!-- defines the diameter of the constant/inner circle -->
+  <width>10</width> 
   <height>10</height>
-  <!-- <active-condition> -->
-   <!-- <property>/aim/active</property> -->
-  <!-- </active-condition> -->
-  <!-- <diameter-input> -->
-   <!-- defines the diameter of the adjustable/outer circle -->
-   <!-- <property>0</property> -->
-  <!-- </diameter-input> -->
+  <diameter-input>1.0</diameter-input>
  </aiming-reticle>
-
-      <label>
-		<name>l</name>
-		<x>-3.7</x>
-           <y>-1.7</y>
-		<width>1</width>
-		<height>1</height>
-		<format>l</format>
-            <diameter-input>5.0</diameter-input>
-		<halign>left</halign>
-	</label>
-
-<label>
-		<name>l</name>
-		<x>-3.7</x>
-           <y>-7</y>
-		<width>1</width>
-		<height>1</height>
-		<format>l</format>
-            <diameter-input>5.0</diameter-input>
-		<halign>left</halign>
-	</label>
-
-<label>
-		<name>l</name>
-		<x>-3.7</x>
-           <y>-12.5</y>
-		<width>1</width>
-		<height>1</height>
-		<format>l</format>
-            <diameter-input>5.0</diameter-input>
-		<halign>left</halign>
-	</label>
-
-<label>
-		<name>l</name>
-		<x>-3.7</x>
-           <y>-18</y>
-		<width>1</width>
-		<height>1</height>
-		<format>l</format>
-            <diameter-input>5.0</diameter-input>
-		<halign>left</halign>
-	</label>
-
-<label>
-		<name>l</name>
-		<x>-3.7</x>
-           <y>-23.5</y>
-		<width>1</width>
-		<height>1</height>
-		<format>l</format>
-            <diameter-input>5.0</diameter-input>
-		<halign>left</halign>
-	</label>
-
-<label>
-		<name>l</name>
-		<x>-3.7</x>
-           <y>-29</y>
-		<width>1</width>
-		<height>1</height>
-		<format>l</format>
-            <diameter-input>5.0</diameter-input>
-		<halign>left</halign>
-	</label>
-
-<label>
-		<name>l</name>
-		<x>-3.7</x>
-           <y>-34.5</y>
-		<width>1</width>
-		<height>1</height>
-		<format>l</format>
-            <diameter-input>5.0</diameter-input>
-		<halign>left</halign>
-	</label>
-
-
-
 
 
 
