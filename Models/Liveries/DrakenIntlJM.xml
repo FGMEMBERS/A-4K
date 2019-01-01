@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+<sim>
+  <model>
+    <livery>
+      <name type="string">Draken Intl John McCain Memorial</name>
+      <texture>Liveries/DrakenIntlJM.png</texture>
+    </livery>
+  </model>
+</sim>
+</PropertyList>
