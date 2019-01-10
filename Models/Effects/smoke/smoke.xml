@@ -7,7 +7,7 @@
   <particlesystem>
     <name>smoke</name>
 
-    <texture>smoke.png</texture>
+    <texture>smoke2.png</texture>
 
     <condition>
       <!-- controls/smoke -->
