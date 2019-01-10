@@ -130,7 +130,7 @@
          chord="3.69"
          sweep="35">
     <stall aoa="27" width="8" peak="1.5"/>
-    <flap0 start="0.3" end="1" lift="1.3" drag="1.4"/>
+    <flap0 start="0.3" end="1" lift="1.3" drag="24.9"/>
     <control-input axis="/controls/flight/rudder" control="FLAP0" invert="true"/>
     <control-input axis="/controls/flight/rudder-trim" control="FLAP0" invert="true"/>
     <control-output control="FLAP0" prop="/surface-positions/rudder-pos-norm"
@@ -206,7 +206,7 @@
          chord="0.8"
          sweep="0">
     <stall aoa="90" width="10" peak="1.0"/>
-    <spoiler start="0.0" end="1.0" lift="0" drag="3"/>
+    <spoiler start="0.0" end="1.0" lift="0" drag="6.0"/>
     <control-input axis="/controls/gear/gear-down" control="SPOILER" />
     <control-output control="SPOILER"  prop="/gear/gear[0]/gear-door-position-norm"/>
     <control-speed control="SPOILER" transition-time="7"/>

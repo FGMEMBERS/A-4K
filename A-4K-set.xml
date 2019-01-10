@@ -31,9 +31,9 @@ the flight data model, instrument panel, and external 3D model.
 
 	<startup>   <splash-texture>Aircraft/A-4K/splash.png</splash-texture>   </startup>	<systems>
 
-			<!--   <autopilot>
-    <path>Aircraft/A-4K/Systems/autopilot.xml</path>
-   </autopilot>-->
+	<autopilot>
+    <path>Aircraft/A-4K/Systems/VooDooAP1.xml</path>
+   </autopilot>
 
 			<electrical>
 				<path>Aircraft/A-4K/Systems/electrical.xml</path>
@@ -47,13 +47,6 @@ the flight data model, instrument panel, and external 3D model.
 		<panel>
 			<visibility>false</visibility>
 		</panel>
-
-           <multiplay>
-              <generic>
-               <string n="9" type="string"/>
-               <int n="10" alias="controls/armament/trigger-cannon" />
-              </generic>
-           </multiplay>
 
 		<instrumentation>
 			<path>Aircraft/A-4K/Systems/instrumentation.xml</path>
@@ -478,7 +471,7 @@ the flight data model, instrument panel, and external 3D model.
 		</aoa-indexer>
 
    <hud>
-      <path n="1">Aircraft/A-4K/Hud/KahuMain.xml</path>
+      <path n="1">Aircraft/A-4K/Hud/Kahu hud.xml</path>
 	  
       <visibility n="0" type="bool">false</visibility>
       <visibility n="1" type="bool">true</visibility>
@@ -498,7 +491,10 @@ the flight data model, instrument panel, and external 3D model.
 	  <bottom type="double">-90</bottom>
      </clipping>
 
-<path n="2">Aircraft/A-4K/Hud/a2g.xml</path>
+</hud>
+<hud>
+
+<path n="2">HUDS/default.xml</path>
 	  
       <visibility n="0" type="bool">false</visibility>
       <visibility n="1" type="bool">true</visibility>
@@ -516,26 +512,6 @@ the flight data model, instrument panel, and external 3D model.
     
 	  <bottom type="double">0</bottom>
      </clipping>
-
-<path n="3">Aircraft/A-4K/Hud/a2a.xml</path>
-	  
-      <visibility n="0" type="bool">false</visibility>
-      <visibility n="1" type="bool">true</visibility>
-      <current-color>0</current-color>
-      <color>
-	<transparent type="bool">true</transparent>
-	<antialiased type="bool">false</antialiased>
-	<brightness type="float">1.0</brightness>
-	<alpha type="float">1.0</alpha>
-      </color>
-<clipping>
-    <left type="double">0</left>
-    <right type="double">0</right>
-    <top type="double">0</top>
-    
-	  <bottom type="double">0</bottom>
-     </clipping>
-
 
     </hud>
 
@@ -611,10 +587,6 @@ the flight data model, instrument panel, and external 3D model.
                       <name>S</name>
                       <desc>Toggle Smoke</desc>
                 </key>	
-                 <key>
-                      <name>I</name>
-                      <desc>Change HUD mode</desc>
-                </key>
        </help>
 
 	<menubar>
@@ -647,8 +619,8 @@ the flight data model, instrument panel, and external 3D model.
 	</default>
 	</menubar>
 	</sim>
-
- 	<autopilot>
+<!--
+<autopilot>
 		<config>
 			<min-climb-speed-kt type="float">200.0</min-climb-speed-kt>
 			<best-climb-speed-kt type="float">300.0</best-climb-speed-kt>
@@ -662,7 +634,7 @@ the flight data model, instrument panel, and external 3D model.
 			<max-aileron type="float">0.15</max-aileron>
 		</config>
 	</autopilot>
-
+	-->
 	<consumables>
 		<fuel>
 			<tank n="0">
