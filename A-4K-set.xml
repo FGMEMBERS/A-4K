@@ -472,7 +472,9 @@ the flight data model, instrument panel, and external 3D model.
 
    <hud>
       <path n="1">Aircraft/A-4K/Hud/Kahu hud.xml</path>
-	  
+      <path n="2">Aircraft/A-4K/HUD/a2a.xml</path>
+      <path n="3">Aircraft/A-4K/HUD/a2g.xml</path>
+  
       <visibility n="0" type="bool">false</visibility>
       <visibility n="1" type="bool">true</visibility>
       <current-color>0</current-color>
@@ -574,6 +576,10 @@ the flight data model, instrument panel, and external 3D model.
 			<key>
 				<name>E</name>
 				<desc>Deploy drag-chute</desc>
+			</key>
+			<key>
+				<name>SHIFT I</name>
+				<desc>Cycle HUD modes</desc>
 			</key>
                 <key>
                       <name>e</name>
