@@ -153,6 +153,7 @@ the flight data model, instrument panel, and external 3D model.
 
 <lbs>108</lbs>
 
+
 </opt>
 
 
@@ -471,10 +472,10 @@ the flight data model, instrument panel, and external 3D model.
 		</aoa-indexer>
 
    <hud>
-      <path n="1">Aircraft/A-4K/Hud/Kahu hud.xml</path>
+      <path n="1">Aircraft/A-4K/HUD/Kahu hud.xml</path>
       <path n="2">Aircraft/A-4K/HUD/a2a.xml</path>
       <path n="3">Aircraft/A-4K/HUD/a2g.xml</path>
-  
+	  
       <visibility n="0" type="bool">false</visibility>
       <visibility n="1" type="bool">true</visibility>
       <current-color>0</current-color>
@@ -492,31 +493,9 @@ the flight data model, instrument panel, and external 3D model.
     
 	  <bottom type="double">-90</bottom>
      </clipping>
-
 </hud>
-<hud>
 
-<path n="2">HUDS/default.xml</path>
-	  
-      <visibility n="0" type="bool">false</visibility>
-      <visibility n="1" type="bool">true</visibility>
-      <current-color>0</current-color>
-      <color>
-	<transparent type="bool">true</transparent>
-	<antialiased type="bool">false</antialiased>
-	<brightness type="float">1.0</brightness>
-	<alpha type="float">1.0</alpha>
-      </color>
-<clipping>
-    <left type="double">0</left>
-    <right type="double">0</right>
-    <top type="double">0</top>
-    
-	  <bottom type="double">0</bottom>
-     </clipping>
-
-    </hud>
-
+  
 		<!--<weight n="0">
    <name>Left Outboard</name>
    <weight-lb>0</weight-lb>
@@ -577,10 +556,6 @@ the flight data model, instrument panel, and external 3D model.
 				<name>E</name>
 				<desc>Deploy drag-chute</desc>
 			</key>
-			<key>
-				<name>SHIFT I</name>
-				<desc>Cycle HUD modes</desc>
-			</key>
                 <key>
                       <name>e</name>
                       <desc>Fire Cannons</desc>
@@ -592,7 +567,11 @@ the flight data model, instrument panel, and external 3D model.
                  <key>
                       <name>S</name>
                       <desc>Toggle Smoke</desc>
-                </key>	
+                </key>
+                <key>
+				<name>SHIFT I</name>
+				<desc>Cycle HUD modes</desc>
+			</key>	
        </help>
 
 	<menubar>
@@ -713,6 +692,18 @@ the flight data model, instrument panel, and external 3D model.
    <binding>
     <command>property-assign</command>
     <property>controls/armament/trigger-cannon</property>
+<condition>
+    <and>
+     <property>sim/model/A-4K/weapons/master-arm-switch</property>
+     <value>1</value>
+   </and>
+   <and>
+  <equals>
+     <property>sim/model/A-4K/weapons/gun-arm-switch</property>
+     <value>1</value>
+    </equals>
+    </and>
+    </condition>
     <value>true</value>
    </binding>
   <mod-up>
@@ -727,10 +718,22 @@ the flight data model, instrument panel, and external 3D model.
 <button n="1">
   <name>trigger</name>
   <desc>Gun Trigger</desc> 
-   <binding>
+     <binding>
     <command>property-assign</command>
     <property>controls/armament/trigger-cannon</property>
-    <value>true</value>
+   <condition>
+    <and>
+     <property>sim/model/A-4K/weapons/master-arm-switch</property>
+     <value>1</value>
+   </and>
+   <and>
+  <equals>
+     <property>sim/model/A-4K/weapons/gun-arm-switch</property>
+     <value>1</value>
+    </equals>
+    </and>
+    </condition>
+   <value>true</value>
    </binding>
   <mod-up>
    <binding>
@@ -740,6 +743,167 @@ the flight data model, instrument panel, and external 3D model.
    </binding> 
   </mod-up>
  </button>
+
+<key n="102">
+  <name>f</name>
+  <desc>Weapon Trigger</desc> 
+
+<binding>
+    <command>property-assign</command>
+    <property>controls/armament/station[1]/release-rocket</property>
+<condition>
+    <and>
+     <property>sim/model/A-4K/weapons/master-arm-switch</property>
+     <value>1</value>
+   </and>
+<and>
+  <equals>
+     <property>controls/armament/station-select</property>
+     <value type="int">0</value>
+   </equals>
+   </and>
+<and>
+  <equals>
+     <property>sim/weight[1]/selected</property>
+     <value>LAU-5003</value>
+   </equals>
+   </and>
+ </condition>
+    <value>true</value>
+   </binding>
+
+
+<binding>
+    <command>property-assign</command>
+    <property>controls/armament/station[2]/release-rocket</property>
+<condition>
+    <and>
+     <property>sim/model/A-4K/weapons/master-arm-switch</property>
+     <value>1</value>
+   </and>
+<and>
+  <equals>
+     <property>controls/armament/station-select</property>
+     <value type="int">1</value>
+   </equals>
+   </and>
+<and>
+  <equals>
+     <property>sim/weight/selected</property>
+     <value>2x LAU-5003</value>
+   </equals>
+   </and>
+ </condition>
+    <value>true</value>
+   </binding>
+
+
+<binding>
+    <command>property-assign</command>
+    <property>controls/armament/station[3]/release-rocket</property>
+<condition>
+    <and>
+     <property>sim/model/A-4K/weapons/master-arm-switch</property>
+     <value>1</value>
+   </and>
+<and>
+  <equals>
+     <property>controls/armament/station-select</property>
+     <value type="int">2</value>
+   </equals>
+   </and>
+<and>
+  <equals>
+     <property>sim/weight[2]/selected</property>
+     <value>3x LAU-5003</value>
+   </equals>
+   </and>
+ </condition>
+    <value>true</value>
+   </binding>
+
+
+     <binding>
+    <command>property-assign</command>
+    <property>controls/armament/station[4]/release-rocket</property>
+<condition>
+    <and>
+     <property>sim/model/A-4K/weapons/master-arm-switch</property>
+     <value>1</value>
+   </and>
+<and>
+  <equals>
+     <property>controls/armament/station-select</property>
+     <value type="int">3</value>
+   </equals>
+   </and>
+<and>
+  <equals>
+     <property>sim/weight[3]/selected</property>
+     <value>2x LAU-5003</value>
+   </equals>
+   </and>
+ </condition>
+    <value>true</value>
+   </binding>
+
+<binding>
+    <command>property-assign</command>
+    <property>controls/armament/station[5]/release-rocket</property>
+<condition>
+    <and>
+     <property>sim/model/A-4K/weapons/master-arm-switch</property>
+     <value>1</value>
+   </and>
+<and>
+  <equals>
+     <property>controls/armament/station-select</property>
+     <value type="int">4</value>
+   </equals>
+   </and>
+<and>
+  <equals>
+     <property>sim/weight[4]/selected</property>
+     <value>LAU-5003</value>
+   </equals>
+   </and>
+ </condition>
+    <value>true</value>
+   </binding>
+<mod-up>
+   <binding>
+    <command>property-assign</command>
+    <property>controls/armament/station[1]/release-rocket</property>
+    <value>false</value>
+   </binding> 
+ 
+   <binding>
+    <command>property-assign</command>
+    <property>controls/armament/station[2]/release-rocket</property>
+    <value>false</value>
+   </binding> 
+  
+   <binding>
+    <command>property-assign</command>
+    <property>controls/armament/station[3]/release-rocket</property>
+    <value>false</value>
+   </binding> 
+ 
+   <binding>
+    <command>property-assign</command>
+    <property>controls/armament/station[4]/release-rocket</property>
+    <value>false</value>
+   </binding> 
+  
+   <binding>
+    <command>property-assign</command>
+    <property>controls/armament/station[5]/release-rocket</property>
+    <value>false</value>
+   </binding> 
+  </mod-up>
+</key>
+
+
 
 <key n="113">
 				<name>q</name>
@@ -826,12 +990,9 @@ the flight data model, instrument panel, and external 3D model.
 			<file>Aircraft/A-4K/Nasal/weapons.nas</file>
 		</guns>
          <canvas_HUD>
-			<file>Aircraft/A-4K/Systems/TSR2-canvas-HUD.nas</file>
-		</canvas_HUD>
-		<!--<canvas_HUD>
 			<file>Aircraft/A-4K/Systems/canvas-HUD.nas</file>
-		</canvas_HUD>-->
-	    </nasal>
+		</canvas_HUD>
+			    </nasal>
 
 	<instrumentation>
 		<radar>
