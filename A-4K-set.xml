@@ -560,6 +560,10 @@ the flight data model, instrument panel, and external 3D model.
                       <name>e</name>
                       <desc>Fire Cannons</desc>
                 </key>
+	<key>
+                      <name>f</name>
+                      <desc>Fire Weapons</desc>
+                </key>
                 <key>
                       <name>q</name>
                       <desc>Deploy Countermeasures</desc>
