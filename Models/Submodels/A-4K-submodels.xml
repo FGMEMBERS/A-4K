@@ -25,17 +25,17 @@
 	</MK-82-LD>
 
 	<LAU68>
-		<model>Aircraft/A-4K/Models/Stores/FFAR/rocket.xml</model>
+		<model>Aircraft/A-4K/Models/Stores/LAU-5003/wp.xml</model>
 		<trigger-once>false</trigger-once>
 		<speed>3200.0</speed>
 		<repeat>true</repeat>
 		<delay>0.3</delay>
-		<count>7</count>
-		<x-offset> -18</x-offset>
-		<y-offset>-13.7</y-offset>
-		<z-offset> -0.5</z-offset>
+		<count>19</count>
+		<x-offset>4.4</x-offset>
+           <y-offset>5</y-offset>
+           <z-offset>-4.73</z-offset>
 		<yaw-offset>0.0</yaw-offset>
-		<pitch-offset>-5</pitch-offset>
+		<pitch-offset>1</pitch-offset>
 		<weight>60</weight>
 		<fuse-range>2.2</fuse-range>
 		<eda>0.01</eda>
@@ -44,23 +44,23 @@
 		<aero-stabilised>true</aero-stabilised>
 		<wind>false</wind>
 		<collision>true</collision>
-		<collision-reports>sim/ai/aircraft/collision/cannon</collision-reports>
+		<collision-reports>sim/ai/aircraft/collision/gun</collision-reports>
 		<impact>true</impact>
-		<impact-reports>sim/ai/aircraft/impact/missile</impact-reports>
-		<submodel-path>Aircraft/A-4K/Models/Stores/FFAR/rocket-submodel.xml</submodel-path>
+		<impact-reports>sim/ai/aircraft/impact/bullet</impact-reports>
+		<submodel-path>Aircraft/A-4K/Models/Stores/LAU-5003/wp.xml</submodel-path>
    </LAU68>
 
 	<submodel>
-		<name>Left LAU 68</name>
+		<name>Left LAU 5003</name>
 		<model alias="../../LAU68/model"/>
 		<trigger>controls/armament/station[0]/release-rocket</trigger>
 		<speed alias="../../LAU68/speed"/>
 		<repeat alias="../../LAU68/repeat"/>
 		<delay alias="../../LAU68/delay"/>
 		<count alias="../../LAU68/count"/>
-		<x-offset alias="../../LAU68/x-offset"/>
-		<y-offset>-10</y-offset>
-		<z-offset>-0.5</z-offset>
+	      <x-offset>4.4</x-offset>
+           <y-offset>-2</y-offset>
+           <z-offset>-4.73</z-offset>
 		<yaw-offset alias="../../LAU68/yaw-offset"/>
 		<pitch-offset alias="../../LAU68/pitch-offset"/>
 		<cd alias="../../LAU68/cd"/>
@@ -179,7 +179,7 @@
 	<submodel>
 		<name>Right TER w/ 3 Mk82 pos 1</name>
 		<model alias="../../MK-82-LD/model"/>
-		<trigger>controls/armament/station[3]/release-stick-1</trigger>
+		<trigger>controls/armament/station[4]/release-bomb</trigger>
 		<speed alias="../../MK-82-LD/speed"/>
 		<repeat alias="../../MK-82-LD/repeat"/>
 		<delay alias="../../MK-82-LD/delay"/>
@@ -255,16 +255,16 @@
 	</submodel>
 
 	<submodel>
-		<name>Right LAU 68</name>
+		<name>Right LAU 5003</name>
 		<model alias="../../LAU68/model"/>
 		<trigger>controls/armament/station[4]/release-rocket</trigger>
 		<speed alias="../../LAU68/speed"/>
 		<repeat alias="../../LAU68/repeat"/>
 		<delay alias="../../LAU68/delay"/>
-		<count alias="../../LAU68/count"/>
-		<x-offset alias="../../LAU68/x-offset"/>
-		<y-offset>10</y-offset>
-		<z-offset>-0.5</z-offset>
+           <count>38</count>
+		<x-offset>4.4</x-offset>
+           <y-offset>7</y-offset>
+           <z-offset>-4.73</z-offset>
 		<yaw-offset alias="../../LAU68/yaw-offset"/>
 		<pitch-offset alias="../../LAU68/pitch-offset"/>
 		<cd alias="../../LAU68/cd"/>
@@ -280,6 +280,116 @@
 		<impact-reports alias="../../LAU68/impact-reports"/>
 		<submodel-path alias="../../LAU68/submodel-path"/>
 	</submodel>
+
+<submodel>
+		<name>Far Right LAU 5003</name>
+		<model alias="../../LAU68/model"/>
+		<trigger>controls/armament/station[5]/release-rocket</trigger>
+		<speed alias="../../LAU68/speed"/>
+		<repeat alias="../../LAU68/repeat"/>
+		<delay alias="../../LAU68/delay"/>
+		<count>19</count>
+		<x-offset>4.4</x-offset>
+           <y-offset>9.5</y-offset>
+           <z-offset>-4.73</z-offset>
+		<yaw-offset alias="../../LAU68/yaw-offset"/>
+		<pitch-offset alias="../../LAU68/pitch-offset"/>
+		<cd alias="../../LAU68/cd"/>
+		<weight alias="../../LAU68/weight"/>
+		<fuse-range alias="../../LAU68/fuse-range"/>
+		<eda alias="../../LAU68/eda"/>
+		<life alias="../../LAU68/life"/>
+		<buoyancy alias="../../LAU68/buoyancy"/>
+		<aero-stabilised alias="../../LAU68/aero-stabilised"/>
+		<wind alias="../../LAU68/wind"/>
+		<collision alias="../../LAU68/collision"/>
+		<impact alias="../../LAU68/impact"/>
+		<impact-reports alias="../../LAU68/impact-reports"/>
+		<submodel-path alias="../../LAU68/submodel-path"/>
+	</submodel>
+
+<submodel>
+		<name>Left LAU 5003</name>
+		<model alias="../../LAU68/model"/>
+		<trigger>controls/armament/station[2]/release-rocket</trigger>
+		<speed alias="../../LAU68/speed"/>
+		<repeat alias="../../LAU68/repeat"/>
+		<delay alias="../../LAU68/delay"/>
+		<count>38</count>
+	      <x-offset>4.4</x-offset>
+           <y-offset>-7</y-offset>
+           <z-offset>-4.73</z-offset>
+		<yaw-offset alias="../../LAU68/yaw-offset"/>
+		<pitch-offset alias="../../LAU68/pitch-offset"/>
+		<cd alias="../../LAU68/cd"/>
+		<weight alias="../../LAU68/weight"/>
+		<fuse-range alias="../../LAU68/fuse-range"/>
+		<eda alias="../../LAU68/eda"/>
+		<life alias="../../LAU68/life"/>
+		<buoyancy alias="../../LAU68/buoyancy"/>
+		<aero-stabilised alias="../../LAU68/aero-stabilised"/>
+		<wind alias="../../LAU68/wind"/>
+		<collision alias="../../LAU68/collision"/>
+		<impact alias="../../LAU68/impact"/>
+		<impact-reports alias="../../LAU68/impact-reports"/>
+		<submodel-path alias="../../LAU68/submodel-path"/>
+	</submodel>
+
+<submodel>
+		<name>Far Left LAU 5003</name>
+		<model alias="../../LAU68/model"/>
+		<trigger>controls/armament/station[1]/release-rocket</trigger>
+		<speed alias="../../LAU68/speed"/>
+		<repeat alias="../../LAU68/repeat"/>
+		<delay alias="../../LAU68/delay"/>
+		<count>19</count>
+	      <x-offset>4.4</x-offset>
+           <y-offset>-9.5</y-offset>
+           <z-offset>-4.73</z-offset>
+		<yaw-offset alias="../../LAU68/yaw-offset"/>
+		<pitch-offset alias="../../LAU68/pitch-offset"/>
+		<cd alias="../../LAU68/cd"/>
+		<weight alias="../../LAU68/weight"/>
+		<fuse-range alias="../../LAU68/fuse-range"/>
+		<eda alias="../../LAU68/eda"/>
+		<life alias="../../LAU68/life"/>
+		<buoyancy alias="../../LAU68/buoyancy"/>
+		<aero-stabilised alias="../../LAU68/aero-stabilised"/>
+		<wind alias="../../LAU68/wind"/>
+		<collision alias="../../LAU68/collision"/>
+		<impact alias="../../LAU68/impact"/>
+		<impact-reports alias="../../LAU68/impact-reports"/>
+		<submodel-path alias="../../LAU68/submodel-path"/>
+	</submodel>
+
+<submodel>
+		<name>Center LAU 5003</name>
+		<model alias="../../LAU68/model"/>
+		<trigger>controls/armament/station[3]/release-rocket</trigger>
+		<speed alias="../../LAU68/speed"/>
+		<repeat alias="../../LAU68/repeat"/>
+		<delay alias="../../LAU68/delay"/>
+		<count>57</count>
+	      <x-offset>4.4</x-offset>
+           <y-offset>0</y-offset>
+           <z-offset>-4.73</z-offset>
+		<yaw-offset alias="../../LAU68/yaw-offset"/>
+		<pitch-offset alias="../../LAU68/pitch-offset"/>
+		<cd alias="../../LAU68/cd"/>
+		<weight alias="../../LAU68/weight"/>
+		<fuse-range alias="../../LAU68/fuse-range"/>
+		<eda alias="../../LAU68/eda"/>
+		<life alias="../../LAU68/life"/>
+		<buoyancy alias="../../LAU68/buoyancy"/>
+		<aero-stabilised alias="../../LAU68/aero-stabilised"/>
+		<wind alias="../../LAU68/wind"/>
+		<collision alias="../../LAU68/collision"/>
+		<impact alias="../../LAU68/impact"/>
+		<impact-reports alias="../../LAU68/impact-reports"/>
+		<submodel-path alias="../../LAU68/submodel-path"/>
+	</submodel>
+
+
 
   <submodel>
       <name>Colt Mk12 Cannon Left</name>
