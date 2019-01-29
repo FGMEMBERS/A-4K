@@ -45,4 +45,25 @@
  <z-offset>0.40</z-offset>
 </animation>
 
+<animation>
+ <object-name>Panel-lighting</object-name>
+ <type>material</type>
+  <emission>
+  <red> 5.0 </red>
+  <green> 0.0 </green>
+  <blue> 0.0 </blue>
+ </emission>
+</animation>
+
+<animation>
+ <type>select</type>
+ <object-name>Panel-lighting</object-name>
+ <condition>
+   <greater-than>
+    <property>/sim/time/sun-angle-rad</property>
+    <value>1.57</value>
+   </greater-than>
+ </condition>
+</animation>
+
 </PropertyList>

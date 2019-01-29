@@ -5,7 +5,7 @@
     <animation>
         <name>needle-cabin-pressure</name>
         <type>rotate</type>
-        <object-name>need1e</object-name>
+        <object-name>instance_0</object-name>
         <property>fdm/yasim/systems/ecs/cabin-pressure</property>
         <factor>38</factor>
         <offset-deg>-10</offset-deg>
