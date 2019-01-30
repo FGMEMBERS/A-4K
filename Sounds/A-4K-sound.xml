@@ -30,6 +30,72 @@
    </position>
   </cannon>
 
+<gun>
+   <name>Far Left LAU5003</name>
+   <path>Aircraft/A-4K/Sounds/shoo8.wav</path>
+   <property>controls/armament/station[1]/release-rocket</property>
+   <mode>looped</mode>
+   <position>
+    <x>-1.0</x>
+    <y>0.8</y>
+    <z>0.0</z>
+   </position>
+  </gun>
+
+<gun>
+   <name>Left LAU5003</name>
+   <path>Aircraft/A-4K/Sounds/shoo8.wav</path>
+   <property>controls/armament/station[2]/release-rocket</property>
+   <mode>looped</mode>
+   <position>
+    <x>-1.0</x>
+    <y>0.8</y>
+    <z>0.0</z>
+   </position>
+  </gun>
+
+<gun>
+   <name>Center LAU5003</name>
+   <path>Aircraft/A-4K/Sounds/shoo8.wav</path>
+   <property>controls/armament/station[3]/release-rocket</property>
+   <mode>looped</mode>
+   <position>
+    <x>-1.0</x>
+    <y>0.8</y>
+    <z>0.0</z>
+   </position>
+  </gun>
+
+
+
+<gun>
+   <name>Right LAU5003</name>
+   <path>Aircraft/A-4K/Sounds/shoo8.wav</path>
+   <property>controls/armament/station[4]/release-rocket</property>
+   <mode>looped</mode>
+   <position>
+    <x>-1.0</x>
+    <y>0.8</y>
+    <z>0.0</z>
+   </position>
+  </gun>
+
+<gun>
+   <name>Far Right LAU5003</name>
+   <path>Aircraft/A-4K/Sounds/shoo8.wav</path>
+   <property>controls/armament/station[5]/release-rocket</property>
+   <mode>looped</mode>
+   <position>
+    <x>-1.0</x>
+    <y>0.8</y>
+    <z>0.0</z>
+   </position>
+  </gun>
+
+
+
+
+
   <engine>
    <name>whine</name>
    <path>Sounds/whine.wav</path>
@@ -104,6 +170,29 @@
     </equals>
    </condition>
   </gear>
+
+
+<switch2>
+   <name>switch click2</name>
+   <path>Sounds/click2.wav</path>
+   <condition>
+    <equals>
+     <property>sim/model/sound/click2</property>
+    </equals>
+   </condition>
+  </switch2>
+
+<switch>
+   <name>switch click</name>
+   <path>Sounds/click.wav</path>
+   <condition>
+    <equals>
+     <property>sim/model/sound/click</property>
+     <value>0</value>
+    </equals>
+   </condition>
+  </switch>
+
 
   <squeal>
    <name>squeal</name>
