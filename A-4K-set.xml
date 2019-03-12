@@ -604,6 +604,13 @@ the flight data model, instrument panel, and external 3D model.
       <property>sim/model/stick</property>
      </binding>
     </item>
+	<item>
+     <label>Toggle GTC</label>
+     <binding>
+	  <command>property-toggle</command>
+      <property>sim/model/GTC</property>
+     </binding>
+    </item>
 	</menu>
 	</default>
 	</menubar>
