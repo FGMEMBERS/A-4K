@@ -1294,6 +1294,32 @@
     </less-than>
    </condition>
   </animation>
+
+<model>
+    <path>Aircraft/A-4K/Models/Submodels/GTC/GTC.ac</path>
+	<name>GTC</name>	
+    <offsets>
+      <x-m>0.49</x-m>
+     <y-m>4.34</y-m> 
+	<z-m>-0.127</z-m>
+    <pitch-deg>0</pitch-deg>
+   <roll-deg>-3.8</roll-deg>
+    <heading-deg>90</heading-deg>
+   </offsets>
+  </model>
+  
+  <animation>
+   <type>select</type>
+   <object-name>GTC</object-name>
+   <condition>
+    <property>sim/model/GTC</property>
+	<less-than>
+     <property>velocities/airspeed-kt</property>
+     <value>80</value>
+    </less-than>
+   </condition>
+  </animation>
+
   
   <!-- chute -->
   
