@@ -287,7 +287,7 @@
 
   <!--  Ballast and Weights to get CofG in correct place-->
   <!-- CofG Location 0.27 Cbar  = -0.28m--> 
-  <ballast x="5.5" y="0" z="1.0" mass="1349"/>
+  <ballast x="5.5" y="0" z="1.0" mass="1300"/>
 
   <!-- 5 pylons. One 3500lbs center, two inboard max 2250lbs, two outboard max 1000lbs -->
   <weight x="-1.6" y="3" z="-0.45" size="0.8"
