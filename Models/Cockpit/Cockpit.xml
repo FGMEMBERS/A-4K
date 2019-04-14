@@ -47,13 +47,50 @@
 
 <model>
   <name>RWR</name>
-  <path>Aircraft/A-4K/Models/Cockpit/Instruments/RWR/rwr.xml</path>
+  <path>Aircraft/A-4K/Models/Cockpit/Instruments/EWS/rwr.xml</path>
   <offsets>
    <x-m>2.62</x-m>
    <y-m>0.13</y-m>
    <z-m>0.88500</z-m>
   </offsets>
  </model>
+
+<model>
+  <name>THREAT</name>
+  <path>Aircraft/A-4K/Models/Cockpit/Instruments/EWS/MLU_threat_warning_prime.xml</path>
+  <offsets>
+   <x-m>-4.786</x-m>
+   <y-m>-0.203</y-m>
+   <z-m>0.578</z-m>
+   <pitch-deg>-15</pitch-deg><!-- needs verification! -->
+  </offsets>
+  <condition>
+   <less-than>
+    <property>sim/variant-id</property>
+    <value>3</value>
+   </less-than>
+  </condition>
+ </model>
+
+  <model>
+  <name>THREAT</name>
+  <path>Aircraft/A-4K/Models/Cockpit/Instruments/EWS/US_threat_warning_prime.xml</path>
+  <offsets>
+   <x-m>-4.786</x-m>
+   <y-m>-0.203</y-m>
+   <z-m>0.578</z-m>
+   <pitch-deg>-15</pitch-deg><!-- needs verification! -->
+  </offsets>
+  <condition>
+    <not>
+   <less-than>
+    <property>sim/variant-id</property>
+    <value>3</value>
+   </less-than>
+ </not>
+  </condition>
+ </model>
+
 
  <model>
   <name>Liquid Oxygen Gauge</name>
@@ -1122,8 +1159,1561 @@
             <z>0</z>
         </axis>
     </animation>
+	
+	<animation>
+    <type>pick</type>
+    <object-name>AZ-SCAN-switch</object-name>
+    <action>
+      <button>0</button>
+      <binding>
+        <command>nasal</command>
+        <script>setprop("sim/messages/copilot", "AZ-SCAN-switch");</script>
+      </binding>
+      <binding>
+        <command>property-toggle</command>
+        <property>sim/model/sound/click</property>
+        <value>1</value>
+      </binding>
+    </action>
+  </animation>
 
+  <animation>
+    <type>rotate</type>
+    <object-name>AZ-SCAN-switch</object-name>
+    <property/>   
+    <center>
+      <x> 2.66766 </x>
+      <y> -0.29305 </y>
+      <z> 0.65274 </z>
+    </center>
+  </animation>
+  
+  	<animation>
+    <type>pick</type>
+    <object-name>EL-BAR-switch</object-name>
+    <action>
+      <button>0</button>
+      <binding>
+        <command>nasal</command>
+        <script>setprop("sim/messages/copilot", "EL-BAR-switch");</script>
+      </binding>
+      <binding>
+        <command>property-toggle</command>
+        <property>sim/model/sound/click</property>
+        <value>1</value>
+      </binding>
+    </action>
+  </animation>
 
+  <animation>
+    <type>rotate</type>
+    <object-name>EL-BAR-switch</object-name>
+    <property/>   
+    <center>
+      <x> 2.66825 </x>
+      <y> -0.22897 </y>
+      <z> 0.65268 </z>
+    </center>
+  </animation>
+  
+    <animation>
+    <type>pick</type>
+    <object-name>PRF-switch</object-name>
+    <action>
+      <button>0</button>
+      <binding>
+        <command>nasal</command>
+        <script>setprop("sim/messages/copilot", "PRF-switch");</script>
+      </binding>
+      <binding>
+        <command>property-toggle</command>
+        <property>sim/model/sound/click</property>
+        <value>1</value>
+      </binding>
+    </action>
+  </animation>
 
+  <animation>
+    <type>rotate</type>
+    <object-name>PRF-switch</object-name>
+    <property/>   
+    <center>
+      <x> 2.69264 </x>
+      <y> -0.26113 </y>
+      <z> 0.64902 </z>
+    </center>
+  </animation>
+  
+  <animation>
+    <type>pick</type>
+    <object-name>CIU-switch-1</object-name>
+    <action>
+      <button>0</button>
+      <binding>
+        <command>nasal</command>
+        <script>setprop("sim/messages/copilot", "CIU-switch-1");</script>
+      </binding>
+      <binding>
+        <command>property-toggle</command>
+        <property>sim/model/sound/click</property>
+        <value>1</value>
+      </binding>
+    </action>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>CIU-switch-1</object-name>
+    <property/>   
+    <center>
+      <x> 2.72372 </x>
+      <y> -0.27705 </y>
+      <z> 0.64565 </z>
+    </center>
+  </animation>
+  
+    <animation>
+    <type>pick</type>
+    <object-name>CIU-switch-2</object-name>
+    <action>
+      <button>0</button>
+      <binding>
+        <command>nasal</command>
+        <script>setprop("sim/messages/copilot", "CIU-switch-2");</script>
+      </binding>
+      <binding>
+        <command>property-toggle</command>
+        <property>sim/model/sound/click</property>
+        <value>1</value>
+      </binding>
+    </action>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>CIU-switch-2</object-name>
+    <property/>   
+    <center>
+      <x> 2.72372 </x>
+      <y> -0.26601 </y>
+      <z> 0.64565 </z>
+    </center>
+  </animation>
+  
+  <animation>
+    <type>pick</type>
+    <object-name>CIU-switch-3</object-name>
+    <action>
+      <button>0</button>
+      <binding>
+        <command>nasal</command>
+        <script>setprop("sim/messages/copilot", "CIU-switch-3");</script>
+      </binding>
+      <binding>
+        <command>property-toggle</command>
+        <property>sim/model/sound/click</property>
+        <value>1</value>
+      </binding>
+    </action>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>CIU-switch-3</object-name>
+    <property/>   
+    <center>
+      <x> 2.72372 </x>
+      <y> -0.25387 </y>
+      <z> 0.64565 </z>
+    </center>
+  </animation>
+  
+   <animation>
+    <type>pick</type>
+    <object-name>CIU-switch-4</object-name>
+    <action>
+      <button>0</button>
+      <binding>
+        <command>nasal</command>
+        <script>setprop("sim/messages/copilot", "CIU-switch-4");</script>
+      </binding>
+      <binding>
+        <command>property-toggle</command>
+        <property>sim/model/sound/click</property>
+        <value>1</value>
+      </binding>
+    </action>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>CIU-switch-4</object-name>
+    <property/>   
+    <center>
+      <x> 2.72372 </x>
+      <y> -0.24255 </y>
+      <z> 0.64565 </z>
+    </center>
+  </animation>
+  
+  <animation>
+    <type>pick</type>
+    <object-name>SALT-REMOVAL-switch</object-name>
+    <action>
+      <button>0</button>
+      <binding>
+        <command>nasal</command>
+        <script>setprop("sim/messages/copilot", "SALT-REMOVAL-switch");</script>
+      </binding>
+      <binding>
+        <command>property-toggle</command>
+        <property>sim/model/sound/click</property>
+        <value>1</value>
+      </binding>
+    </action>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>SALT-REMOVAL-switch</object-name>
+    <property/>   
+    <center>
+      <x> 2.77593 </x>
+      <y> -0.26751 </y>
+      <z> 0.65105 </z>
+    </center>
+  </animation>
+  
+    <animation>
+    <type>pick</type>
+    <object-name>EXT-LIGHTS-switch</object-name>
+    <action>
+      <button>0</button>
+      <binding>
+        <command>nasal</command>
+        <script>setprop("sim/messages/copilot", "EXT-LIGHTS-switch");</script>
+      </binding>
+      <binding>
+        <command>property-toggle</command>
+        <property>sim/model/sound/click</property>
+        <value>1</value>
+      </binding>
+    </action>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>EXT-LIGHTS-switch</object-name>
+    <property/>   
+    <center>
+      <x> 2.77776 </x>
+      <y> -0.29423 </y>
+      <z> 0.6503 </z>
+    </center>
+  </animation>
+  
+  <animation>
+    <type>pick</type>
+    <object-name>NWS-switch</object-name>
+    <action>
+      <button>0</button>
+      <binding>
+        <command>nasal</command>
+        <script>setprop("sim/messages/copilot", "NWS-switch");</script>
+      </binding>
+      <binding>
+        <command>property-toggle</command>
+        <property>sim/model/sound/click</property>
+        <value>1</value>
+      </binding>
+    </action>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>NWS-switch</object-name>
+    <property/>   
+    <center>
+      <x> 2.79982 </x>
+      <y> -0.29752 </y>
+      <z> 0.6481 </z>
+    </center>
+  </animation>
+  
+  <animation>
+    <type>pick</type>
+    <object-name>SPOILER-ARM-switch</object-name>
+    <action>
+      <button>0</button>
+      <binding>
+        <command>nasal</command>
+        <script>setprop("sim/messages/copilot", "SPOILER-ARM-switch");</script>
+      </binding>
+      <binding>
+        <command>property-toggle</command>
+        <property>sim/model/sound/click</property>
+        <value>1</value>
+      </binding>
+    </action>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>SPOILER-ARM-switch</object-name>
+    <property/>   
+    <center>
+      <x> 2.81948 </x>
+      <y> -0.2938 </y>
+      <z> 0.64657 </z>
+    </center>
+  </animation>
+  
+  <animation>
+    <type>pick</type>
+    <object-name>RAIN-REMOVAL-switch</object-name>
+    <action>
+      <button>0</button>
+      <binding>
+        <command>nasal</command>
+        <script>setprop("sim/messages/copilot", "RAIN-REMOVAL-switch");</script>
+      </binding>
+      <binding>
+        <command>property-toggle</command>
+        <property>sim/model/sound/click</property>
+        <value>1</value>
+      </binding>
+    </action>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>RAIN-REMOVAL-switch</object-name>
+    <property/>   
+    <interpolation>
+      <entry>
+        <ind>0</ind>
+        <dep>30</dep>
+      </entry>
+      <entry>
+        <ind>1</ind>
+        <dep>-30</dep>
+      </entry>
+    </interpolation>
+    <center>
+      <x> 2.82009 </x>
+      <y> -0.261 </y>
+      <z> 0.64732 </z>
+    </center>
+  </animation>
+
+  <animation>
+    <type>pick</type>
+    <object-name>AIR-REFUEL-switch</object-name>
+    <action>
+      <button>0</button>
+      <binding>
+        <command>nasal</command>
+        <script>setprop("sim/messages/copilot", "AIR-REFUEL-switch");</script>
+      </binding>
+      <binding>
+        <command>property-toggle</command>
+        <property>sim/model/sound/click</property>
+        <value>1</value>
+      </binding>
+    </action>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>AIR-REFUEL-switch</object-name>
+    <property/>   
+    <center>
+      <x> 2.9128 </x>
+      <y> -0.28445 </y>
+      <z> 0.62664 </z>
+    </center>
+  </animation>
+  
+  <animation>
+    <type>pick</type>
+    <object-name>DROP-TANKS-switch</object-name>
+    <action>
+      <button>0</button>
+      <binding>
+        <command>nasal</command>
+        <script>setprop("sim/messages/copilot", "DROP-TANKS-switch");</script>
+      </binding>
+      <binding>
+        <command>property-toggle</command>
+        <property>sim/model/sound/click</property>
+        <value>1</value>
+      </binding>
+    </action>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>DROP-TANKS-switch</object-name>
+    <property/>   
+    <center>
+      <x> 2.9121 </x>
+      <y> -0.24762 </y>
+      <z> 0.62624 </z>
+    </center>
+  </animation>
+  
+  <animation>
+    <type>pick</type>
+    <object-name>FUEL-PUMP-switch</object-name>
+    <action>
+      <button>0</button>
+      <binding>
+        <command>nasal</command>
+        <script>setprop("sim/messages/copilot", "FUEL-PUMP-switch");</script>
+      </binding>
+      <binding>
+        <command>property-toggle</command>
+        <property>sim/model/sound/click</property>
+        <value>1</value>
+      </binding>
+    </action>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>FUEL-PUMP-switch</object-name>
+    <property/>   
+    <center>
+      <x> 2.96919 </x>
+      <y> -0.28841 </y>
+      <z> 0.62133 </z>
+    </center>
+  </animation>
+  
+    <animation>
+    <type>pick</type>
+    <object-name>IGNITER-switch</object-name>
+    <action>
+      <button>0</button>
+      <binding>
+        <command>nasal</command>
+        <script>setprop("sim/messages/copilot", "IGNITER-switch");</script>
+      </binding>
+      <binding>
+        <command>property-toggle</command>
+        <property>sim/model/sound/click</property>
+        <value>1</value>
+      </binding>
+    </action>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>IGNITER-switch</object-name>
+    <property/>   
+    <center>
+      <x> 2.97016 </x>
+      <y> -0.24264 </y>
+      <z> 0.62053 </z>
+    </center>
+  </animation>
+  
+  <animation>
+    <type>pick</type>
+    <object-name>AIL-TRIM-switch</object-name>
+    <action>
+      <button>0</button>
+      <binding>
+        <command>nasal</command>
+        <script>setprop("sim/messages/copilot", "AIL-TRIM-switch");</script>
+      </binding>
+      <binding>
+        <command>property-toggle</command>
+        <property>sim/model/sound/click</property>
+        <value>1</value>
+      </binding>
+    </action>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>AIL-TRIM-switch</object-name>
+    <property/>   
+    <center>
+      <x> 3.01421 </x>
+      <y> -0.2892 </y>
+      <z> 0.61555 </z>
+    </center>
+  </animation>
+  
+  <animation>
+    <type>pick</type>
+    <object-name>HDG-SEL-switch</object-name>
+    <action>
+      <button>0</button>
+      <binding>
+        <command>nasal</command>
+        <script>setprop("sim/messages/copilot", "HDG-SEL-switch");</script>
+      </binding>
+      <binding>
+        <command>property-toggle</command>
+        <property>sim/model/sound/click</property>
+        <value>1</value>
+      </binding>
+    </action>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>HDG-SEL-switch</object-name>
+    <property/>   
+    <center>
+      <x> 3.01315 </x>
+      <y> -0.26787 </y>
+      <z> 0.61504 </z>
+    </center>
+  </animation>
+  
+    <animation>
+    <type>pick</type>
+    <object-name>STAB-AUG-switch</object-name>
+    <action>
+      <button>0</button>
+      <binding>
+        <command>nasal</command>
+        <script>setprop("sim/messages/copilot", "STAB-AUG-switch");</script>
+      </binding>
+      <binding>
+        <command>property-toggle</command>
+        <property>sim/model/sound/click</property>
+        <value>1</value>
+      </binding>
+    </action>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>STAB-AUG-switch</object-name>
+    <property/>   
+    <center>
+      <x> 3.03586 </x>
+      <y> -0.29533 </y>
+      <z> 0.61367 </z>
+    </center>
+  </animation>
+  
+  <animation>
+    <type>pick</type>
+    <object-name>HDG-SEL-switch-2</object-name>
+    <action>
+      <button>0</button>
+      <binding>
+        <command>nasal</command>
+        <script>setprop("sim/messages/copilot", "HDG-SEL-switch-2");</script>
+      </binding>
+      <binding>
+        <command>property-toggle</command>
+        <property>sim/model/sound/click</property>
+        <value>1</value>
+      </binding>
+    </action>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>HDG-SEL-switch-2</object-name>
+    <property/>   
+    <center>
+      <x> 3.04 </x>
+      <y> -0.2775 </y>
+      <z> 0.61311 </z>
+    </center>
+	<axis>
+      <x>0</x>
+      <y>1</y>
+      <z>0</z>
+    </axis>
+  </animation>
+  
+  <animation>
+    <type>pick</type>
+    <object-name>ALT-switch</object-name>
+    <action>
+      <button>0</button>
+      <binding>
+        <command>nasal</command>
+        <script>setprop("sim/messages/copilot", "ALT-switch");</script>
+      </binding>
+      <binding>
+        <command>property-toggle</command>
+        <property>sim/model/sound/click</property>
+        <value>1</value>
+      </binding>
+    </action>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>ALT-switch</object-name>
+    <property/>   
+    <center>
+      <x> 3.03707 </x>
+      <y> -0.25843 </y>
+      <z> 0.61297 </z>
+    </center>
+  </animation>
+  
+  <animation>
+    <type>pick</type>
+    <object-name>ENGAGE-switch</object-name>
+    <action>
+      <button>0</button>
+      <binding>
+        <command>nasal</command>
+        <script>setprop("sim/messages/copilot", "ENGAGE-switch");</script>
+      </binding>
+      <binding>
+        <command>property-toggle</command>
+        <property>sim/model/sound/click</property>
+        <value>1</value>
+      </binding>
+    </action>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>ENGAGE-switch</object-name>
+    <property/>   
+    <center>
+      <x> 3.03526 </x>
+      <y> -0.23737 </y>
+      <z> 0.61211 </z>
+    </center>
+  </animation>
+  
+  <animation>
+    <type>pick</type>
+    <object-name>BATTERY-switch</object-name>
+    <action>
+      <button>0</button>
+      <binding>
+        <command>nasal</command>
+        <script>setprop("sim/messages/copilot", "BATTERY-switch");</script>
+      </binding>
+      <binding>
+        <command>property-toggle</command>
+        <property>sim/model/sound/click</property>
+        <value>1</value>
+      </binding>
+    </action>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>BATTERY-switch</object-name>
+    <property/>   
+    <center>
+      <x> 3.07401 </x>
+      <y> -0.28774 </y>
+      <z> 0.60974 </z>
+    </center>
+  </animation>
+  
+    <animation>
+    <type>pick</type>
+    <object-name>AVIONICS-switch</object-name>
+    <action>
+      <button>0</button>
+      <binding>
+        <command>nasal</command>
+        <script>setprop("sim/messages/copilot", "AVIONICS-switch");</script>
+      </binding>
+      <binding>
+        <command>property-toggle</command>
+        <property>sim/model/sound/click</property>
+        <value>1</value>
+      </binding>
+    </action>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>AVIONICS-switch</object-name>
+    <property/>   
+    <center>
+      <x> 3.07401 </x>
+      <y> -0.28774 </y>
+      <z> 0.60974 </z>
+    </center>
+  </animation>
+
+ <animation>
+    <type>pick</type>
+    <object-name>Selector-knob</object-name>
+    <action>
+      <button>0</button>
+      <binding>
+        <command>nasal</command>
+        <script>setprop("sim/messages/copilot", "Selector-knob");</script>
+      </binding>
+      <binding>
+        <command>property-toggle</command>
+        <property>sim/model/sound/click</property>
+        <value>1</value>
+      </binding>
+    </action>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>Selector-knob</object-name>
+    <property/>   
+    <center>
+      <x> 2.67669 </x>
+      <y> 0.29876 </y>
+      <z> 0.63857 </z>
+    </center>
+  </animation>
+  
+  <animation>
+    <type>pick</type>
+    <object-name>INU-knob</object-name>
+    <action>
+      <button>0</button>
+      <binding>
+        <command>nasal</command>
+        <script>setprop("sim/messages/copilot", "INU-knob");</script>
+      </binding>
+      <binding>
+        <command>property-toggle</command>
+        <property>sim/model/sound/click</property>
+        <value>1</value>
+      </binding>
+    </action>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>INU-knob</object-name>
+    <property/>   
+    <center>
+      <x> 2.76461 </x>
+      <y> 0.25223 </y>
+      <z> 0.62908 </z>
+    </center>
+  </animation>
+  
+  <animation>
+    <type>pick</type>
+    <object-name>RADR-knob</object-name>
+    <action>
+      <button>0</button>
+      <binding>
+        <command>nasal</command>
+        <script>setprop("sim/messages/copilot", "RADR-knob");</script>
+      </binding>
+      <binding>
+        <command>property-toggle</command>
+        <property>sim/model/sound/click</property>
+        <value>1</value>
+      </binding>
+    </action>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>RADR-knob</object-name>
+    <property/>   
+    <center>
+      <x> 2.76515 </x>
+      <y> 0.27254 </y>
+      <z> 0.62908 </z>
+    </center>
+  </animation>
+  
+  <animation>
+    <type>pick</type>
+    <object-name>CSE-switch</object-name>
+    <action>
+      <button>0</button>
+      <binding>
+        <command>nasal</command>
+        <script>setprop("sim/messages/copilot", "CSE-switch");</script>
+      </binding>
+      <binding>
+        <command>property-toggle</command>
+        <property>sim/model/sound/click</property>
+        <value>1</value>
+      </binding>
+    </action>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>CSE-switch</object-name>
+    <property/>   
+    <center>
+      <x> 2.81415 </x>
+      <y> 0.25288 </y>
+      <z> 0.63406 </z>
+    </center>
+  </animation>
+  
+  <animation>
+    <type>pick</type>
+    <object-name>REF-switch</object-name>
+    <action>
+      <button>0</button>
+      <binding>
+        <command>nasal</command>
+        <script>setprop("sim/messages/copilot", "REF-switch");</script>
+      </binding>
+      <binding>
+        <command>property-toggle</command>
+        <property>sim/model/sound/click</property>
+        <value>1</value>
+      </binding>
+    </action>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>REF-switch</object-name>
+    <property/>   
+    <center>
+      <x> 2.81419 </x>
+      <y> 0.27057 </y>
+      <z> 0.63451 </z>
+    </center>
+  </animation>
+  
+  <animation>
+    <type>pick</type>
+    <object-name>DME-HOLD-switch</object-name>
+    <action>
+      <button>0</button>
+      <binding>
+        <command>nasal</command>
+        <script>setprop("sim/messages/copilot", "DME-HOLD-switch");</script>
+      </binding>
+      <binding>
+        <command>property-toggle</command>
+        <property>sim/model/sound/click</property>
+        <value>1</value>
+      </binding>
+    </action>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>DME-HOLD-switch</object-name>
+    <property/>   
+    <center>
+      <x> 2.81454 </x>
+      <y> 0.29557 </y>
+      <z> 0.63416 </z>
+    </center>
+  </animation>
+  
+  <animation>
+    <type>pick</type>
+    <object-name>Tuner-knob-1</object-name>
+    <action>
+      <button>0</button>
+      <binding>
+        <command>nasal</command>
+        <script>setprop("sim/messages/copilot", "Tuner-knob-1");</script>
+      </binding>
+      <binding>
+        <command>property-toggle</command>
+        <property>sim/model/sound/click</property>
+        <value>1</value>
+      </binding>
+    </action>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>Tuner-knob-1</object-name>
+    <property/>   
+    <center>
+      <x> 2.90214 </x>
+      <y> 0.24814 </y>
+      <z> 0.62147 </z>
+    </center>
+  </animation>
+  
+  <animation>
+    <type>pick</type>
+    <object-name>Tuner-knob-2</object-name>
+    <action>
+      <button>0</button>
+      <binding>
+        <command>nasal</command>
+        <script>setprop("sim/messages/copilot", "Tuner-knob-2");</script>
+      </binding>
+      <binding>
+        <command>property-toggle</command>
+        <property>sim/model/sound/click</property>
+        <value>1</value>
+      </binding>
+    </action>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>Tuner-knob-2</object-name>
+    <property/>   
+    <center>
+      <x> 2.90106 </x>
+      <y> 0.26308 </y>
+      <z> 0.62182 </z>
+    </center>
+  </animation>
+  
+  <animation>
+    <type>pick</type>
+    <object-name>Tuner-knob-3</object-name>
+    <action>
+      <button>0</button>
+      <binding>
+        <command>nasal</command>
+        <script>setprop("sim/messages/copilot", "Tuner-knob-3");</script>
+      </binding>
+      <binding>
+        <command>property-toggle</command>
+        <property>sim/model/sound/click</property>
+        <value>1</value>
+      </binding>
+    </action>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>Tuner-knob-3</object-name>
+    <property/>   
+    <center>
+      <x> 2.90055 </x>
+      <y> 0.28026 </y>
+      <z> 0.62157 </z>
+    </center>
+  </animation>  
+  
+  <animation>
+    <type>pick</type>
+    <object-name>Tuner-knob-4</object-name>
+    <action>
+      <button>0</button>
+      <binding>
+        <command>nasal</command>
+        <script>setprop("sim/messages/copilot", "Tuner-knob-4");</script>
+      </binding>
+      <binding>
+        <command>property-toggle</command>
+        <property>sim/model/sound/click</property>
+        <value>1</value>
+      </binding>
+    </action>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>Tuner-knob-4</object-name>
+    <property/>   
+    <center>
+      <x> 2.90232 </x>
+      <y> 0.29734 </y>
+      <z> 0.62157 </z>
+    </center>
+  </animation> 
+  
+  <animation>
+    <type>pick</type>
+    <object-name>SMPO-knob</object-name>
+    <action>
+      <button>0</button>
+      <binding>
+        <command>nasal</command>
+        <script>setprop("sim/messages/copilot", "SMPO-knob");</script>
+      </binding>
+      <binding>
+        <command>property-toggle</command>
+        <property>sim/model/sound/click</property>
+        <value>1</value>
+      </binding>
+    </action>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>SMPO-knob</object-name>
+    <property/>   
+    <center>
+      <x> 2.93156 </x>
+      <y> 0.23834 </y>
+      <z> 0.60756 </z>
+    </center>
+  </animation> 
+  
+  <animation>
+    <type>pick</type>
+    <object-name>PRESET-knob</object-name>
+    <action>
+      <button>0</button>
+      <binding>
+        <command>nasal</command>
+        <script>setprop("sim/messages/copilot", "PRESET-knob");</script>
+      </binding>
+      <binding>
+        <command>property-toggle</command>
+        <property>sim/model/sound/click</property>
+        <value>1</value>
+      </binding>
+    </action>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>PRESET-knob</object-name>
+    <property/>   
+    <center>
+      <x> 2.93451 </x>
+      <y> 0.26914 </y>
+      <z> 0.61148 </z>
+    </center>
+  </animation> 
+  
+  <animation>
+    <type>pick</type>
+    <object-name>PRESET-knob</object-name>
+    <action>
+      <button>0</button>
+      <binding>
+        <command>nasal</command>
+        <script>setprop("sim/messages/copilot", "PRESET-knob");</script>
+      </binding>
+      <binding>
+        <command>property-toggle</command>
+        <property>sim/model/sound/click</property>
+        <value>1</value>
+      </binding>
+    </action>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>PRESET-knob</object-name>
+    <property/>   
+    <center>
+      <x> 2.93451 </x>
+      <y> 0.26914 </y>
+      <z> 0.61148 </z>
+    </center>
+  </animation> 
+  
+  <animation>
+    <type>pick</type>
+    <object-name>ABMO-knob</object-name>
+    <action>
+      <button>0</button>
+      <binding>
+        <command>nasal</command>
+        <script>setprop("sim/messages/copilot", "ABMO-knob");</script>
+      </binding>
+      <binding>
+        <command>property-toggle</command>
+        <property>sim/model/sound/click</property>
+        <value>1</value>
+      </binding>
+    </action>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>ABMO-knob</object-name>
+    <property/>   
+    <center>
+      <x> 2.93142 </x>
+      <y> 0.30369 </y>
+      <z> 0.6082 </z>
+    </center>
+  </animation> 
+  
+  <animation>
+    <type>pick</type>
+    <object-name>COLD-HOT-switch</object-name>
+    <action>
+      <button>0</button>
+      <binding>
+        <command>nasal</command>
+        <script>setprop("sim/messages/copilot", "COLD-HOT-switch");</script>
+      </binding>
+      <binding>
+        <command>property-toggle</command>
+        <property>sim/model/sound/click</property>
+        <value>1</value>
+      </binding>
+    </action>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>COLD-HOT-switch</object-name>
+    <property/>   
+    <center>
+      <x> 3.00275 </x>
+      <y> 0.29227 </y>
+      <z> 0.61343 </z>
+    </center>
+  </animation> 
+  
+  <animation>
+    <type>pick</type>
+    <object-name>ICS-switch</object-name>
+    <action>
+      <button>0</button>
+      <binding>
+        <command>nasal</command>
+        <script>setprop("sim/messages/copilot", "ICS-switch");</script>
+      </binding>
+      <binding>
+        <command>property-toggle</command>
+        <property>sim/model/sound/click</property>
+        <value>1</value>
+      </binding>
+    </action>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>ICS-switch</object-name>
+    <property/>   
+    <center>
+      <x> 3.02126 </x>
+      <y> 0.24407 </y>
+      <z> 0.61131 </z>
+    </center>
+  </animation> 
+  
+  <animation>
+    <type>pick</type>
+    <object-name>TACAN-VOR-switch</object-name>
+    <action>
+      <button>0</button>
+      <binding>
+        <command>nasal</command>
+        <script>setprop("sim/messages/copilot", "TACAN-VOR-switch");</script>
+      </binding>
+      <binding>
+        <command>property-toggle</command>
+        <property>sim/model/sound/click</property>
+        <value>1</value>
+      </binding>
+    </action>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>TACAN-VOR-switch</object-name>
+    <property/>   
+    <center>
+      <x> 3.02126 </x>
+      <y> 0.25707 </y>
+      <z> 0.61131 </z>
+    </center>
+  </animation> 
+  
+  <animation>
+    <type>pick</type>
+    <object-name>RWR-AIM9-switch</object-name>
+    <action>
+      <button>0</button>
+      <binding>
+        <command>nasal</command>
+        <script>setprop("sim/messages/copilot", "RWR-AIM9-switch");</script>
+      </binding>
+      <binding>
+        <command>property-toggle</command>
+        <property>sim/model/sound/click</property>
+        <value>1</value>
+      </binding>
+    </action>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>RWR-AIM9-switch</object-name>
+    <property/>   
+    <center>
+      <x> 3.02122 </x>
+      <y> 0.26877 </y>
+      <z> 0.61177 </z>
+    </center>
+  </animation> 
+ 
+  <animation>
+    <type>pick</type>
+    <object-name>TOP-BOT-switch</object-name>
+    <action>
+      <button>0</button>
+      <binding>
+        <command>nasal</command>
+        <script>setprop("sim/messages/copilot", "TOP-BOT-switch");</script>
+      </binding>
+      <binding>
+        <command>property-toggle</command>
+        <property>sim/model/sound/click</property>
+        <value>1</value>
+      </binding>
+    </action>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>TOP-BOT-switch</object-name>
+    <property/>   
+    <center>
+      <x> 3.05708 </x>
+      <y> 0.27217 </y>
+      <z> 0.60684 </z>
+    </center>
+  </animation>
+  
+  <animation>
+    <type>pick</type>
+    <object-name>T-MON-switch</object-name>
+    <action>
+      <button>0</button>
+      <binding>
+        <command>nasal</command>
+        <script>setprop("sim/messages/copilot", "T-MON-switch");</script>
+      </binding>
+      <binding>
+        <command>property-toggle</command>
+        <property>sim/model/sound/click</property>
+        <value>1</value>
+      </binding>
+    </action>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>T-MON-switch</object-name>
+    <property/>   
+    <center>
+      <x> 3.06502 </x>
+      <y> 0.25218 </y>
+      <z> 0.60635 </z>
+    </center>
+  </animation>
+  
+  <animation>
+    <type>pick</type>
+    <object-name>RAD-TEST-switch</object-name>
+    <action>
+      <button>0</button>
+      <binding>
+        <command>nasal</command>
+        <script>setprop("sim/messages/copilot", "RAD-TEST-switch");</script>
+      </binding>
+      <binding>
+        <command>property-toggle</command>
+        <property>sim/model/sound/click</property>
+        <value>1</value>
+      </binding>
+    </action>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>RAD-TEST-switch</object-name>
+    <property/>   
+    <center>
+      <x> 3.09319 </x>
+      <y> 0.27526 </y>
+      <z> 0.60441 </z>
+    </center>
+  </animation>
+  
+  <animation>
+    <type>pick</type>
+    <object-name>M-1-switch</object-name>
+    <action>
+      <button>0</button>
+      <binding>
+        <command>nasal</command>
+        <script>setprop("sim/messages/copilot", "M-1-switch");</script>
+      </binding>
+      <binding>
+        <command>property-toggle</command>
+        <property>sim/model/sound/click</property>
+        <value>1</value>
+      </binding>
+    </action>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>M-1-switch</object-name>
+    <property/>   
+    <center>
+      <x> 3.09322 </x>
+      <y> 0.23333 </y>
+      <z> 0.60441 </z>
+    </center>
+  </animation>
+  
+  <animation>
+    <type>pick</type>
+    <object-name>M-2-switch</object-name>
+    <action>
+      <button>0</button>
+      <binding>
+        <command>nasal</command>
+        <script>setprop("sim/messages/copilot", "M-2-switch");</script>
+      </binding>
+      <binding>
+        <command>property-toggle</command>
+        <property>sim/model/sound/click</property>
+        <value>1</value>
+      </binding>
+    </action>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>M-2-switch</object-name>
+    <property/>   
+    <center>
+      <x> 3.09321 </x>
+      <y> 0.24133 </y>
+      <z> 0.60441 </z>
+    </center>
+  </animation>
+  
+  <animation>
+    <type>pick</type>
+    <object-name>M-3-A-switch</object-name>
+    <action>
+      <button>0</button>
+      <binding>
+        <command>nasal</command>
+        <script>setprop("sim/messages/copilot", "M-3-A-switch");</script>
+      </binding>
+      <binding>
+        <command>property-toggle</command>
+        <property>sim/model/sound/click</property>
+        <value>1</value>
+      </binding>
+    </action>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>M-3-A-switch</object-name>
+    <property/>   
+    <center>
+      <x> 3.09322 </x>
+      <y> 0.25033 </y>
+      <z> 0.60441 </z>
+    </center>
+  </animation>
+  
+  <animation>
+    <type>pick</type>
+    <object-name>M-C-switch</object-name>
+    <action>
+      <button>0</button>
+      <binding>
+        <command>nasal</command>
+        <script>setprop("sim/messages/copilot", "M-C-switch");</script>
+      </binding>
+      <binding>
+        <command>property-toggle</command>
+        <property>sim/model/sound/click</property>
+        <value>1</value>
+      </binding>
+    </action>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>M-C-switch</object-name>
+    <property/>   
+    <center>
+      <x> 3.09312 </x>
+      <y> 0.26027 </y>
+      <z> 0.60488 </z>
+    </center>
+  </animation>
+  
+  <animation>
+    <type>pick</type>
+    <object-name>TEST-AUDIO-switch-1</object-name>
+    <action>
+      <button>0</button>
+      <binding>
+        <command>nasal</command>
+        <script>setprop("sim/messages/copilot", "TEST-AUDIO-switch-1");</script>
+      </binding>
+      <binding>
+        <command>property-toggle</command>
+        <property>sim/model/sound/click</property>
+        <value>1</value>
+      </binding>
+    </action>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>TEST-AUDIO-switch-1</object-name>
+    <property/>   
+    <center>
+      <x> 3.12694 </x>
+      <y> 0.25542 </y>
+      <z> 0.59943 </z>
+    </center>
+  </animation>
+  
+  <animation>
+    <type>pick</type>
+    <object-name>TEST-AUDIO-switch-2</object-name>
+    <action>
+      <button>0</button>
+      <binding>
+        <command>nasal</command>
+        <script>setprop("sim/messages/copilot", "TEST-AUDIO-switch-2");</script>
+      </binding>
+      <binding>
+        <command>property-toggle</command>
+        <property>sim/model/sound/click</property>
+        <value>1</value>
+      </binding>
+    </action>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>TEST-AUDIO-switch-2</object-name>
+    <property/>   
+    <center>
+      <x> 3.12691 </x>
+      <y> 0.26761 </y>
+      <z> 0.59982 </z>
+    </center>
+  </animation>
+  
+  <animation>
+    <type>pick</type>
+    <object-name>IDENT-MIC-switch</object-name>
+    <action>
+      <button>0</button>
+      <binding>
+        <command>nasal</command>
+        <script>setprop("sim/messages/copilot", "IDENT-MIC-switch");</script>
+      </binding>
+      <binding>
+        <command>property-toggle</command>
+        <property>sim/model/sound/click</property>
+        <value>1</value>
+      </binding>
+    </action>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>IDENT-MIC-switch</object-name>
+    <property/>   
+    <center>
+      <x> 3.12728 </x>
+      <y> 0.29665 </y>
+      <z> 0.59928 </z>
+    </center>
+  </animation>
+  
+  <animation>
+    <type>pick</type>
+    <object-name>INST-knob</object-name>
+    <action>
+      <button>0</button>
+      <binding>
+        <command>nasal</command>
+        <script>setprop("sim/messages/copilot", "INST-knob");</script>
+      </binding>
+      <binding>
+        <command>property-toggle</command>
+        <property>sim/model/sound/click</property>
+        <value>1</value>
+      </binding>
+    </action>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>INST-knob</object-name>
+    <property/>   
+    <center>
+      <x> 3.20016 </x>
+      <y> 0.25335 </y>
+      <z> 0.582 </z>
+    </center>
+  </animation>
+  
+  <animation>
+    <type>pick</type>
+    <object-name>CONSOLES-knob</object-name>
+    <action>
+      <button>0</button>
+      <binding>
+        <command>nasal</command>
+        <script>setprop("sim/messages/copilot", "CONSOLES-knob");</script>
+      </binding>
+      <binding>
+        <command>property-toggle</command>
+        <property>sim/model/sound/click</property>
+        <value>1</value>
+      </binding>
+    </action>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>CONSOLES-knob</object-name>
+    <property/>   
+    <center>
+      <x> 3.19994 </x>
+      <y> 0.28527 </y>
+      <z> 0.58216 </z>
+    </center>
+  </animation>
+  
+  <animation>
+    <type>pick</type>
+    <object-name>INST-switch</object-name>
+    <action>
+      <button>0</button>
+      <binding>
+        <command>nasal</command>
+        <script>setprop("sim/messages/copilot", "INST-switch");</script>
+      </binding>
+      <binding>
+        <command>property-toggle</command>
+        <property>sim/model/sound/click</property>
+        <value>1</value>
+      </binding>
+    </action>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>INST-switch</object-name>
+    <property/>   
+    <center>
+      <x> 3.22836</x>
+      <y> 0.25666 </y>
+      <z> 0.58877 </z>
+    </center>
+  </animation>
+ 
 </PropertyList>
 
